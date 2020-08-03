@@ -49,6 +49,7 @@ public class SpringzjApplication {
         //从容器中获取对象
         MathJiSuan mathJiSuan = context.getBean(MathJiSuan.class);
         mathJiSuan.div(1,1);
+        //为什么我的电脑这么卡
 
 
 
