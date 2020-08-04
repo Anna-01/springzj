@@ -17,7 +17,6 @@ import org.springframework.stereotype.Controller;
 //@SpringBootApplication注解中含有@ComponentScan   springboot 核心 约定大于配置
 @SpringBootApplication
 //放在这里就扫描不到了
-
 //@ComponentScan({"com.springstudy.springzj.pojo"})
 
 //在 Spring Boot启动类上使用@ServletComponentScan 注解后，使用@WebServlet、@WebFilter、@WebListener标记的 Servlet、Filter、Listener 就可以自动注册到Servlet容器中，无需其他代码

@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 
 @Service(value = "MyService")
 public class MyServiceImpl implements MyService {
-    @Resource(name = "MyDao")
+    @Resource
     private MyDao myDao;
 
 

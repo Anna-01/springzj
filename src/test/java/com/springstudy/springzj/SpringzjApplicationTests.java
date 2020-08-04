@@ -31,9 +31,21 @@ class SpringzjApplicationTests {
         mathJiSuan.div(1,1);
     }
 
+
     @Test
     void testService() {
         myService.toAddPerson();
     }
+    /**
+     * 切面相关测试
+     */
+    @Test
+    public void testAop() {
+        //todo 切面
+        AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(MyAopConfig.class);
 
+        //从容器中获取对象
+        MathJiSuan mathJiSuan = context.getBean(MathJiSuan.class);
+        mathJiSuan.div(1,1);
+    }
 }
