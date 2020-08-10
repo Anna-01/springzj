@@ -1,9 +1,14 @@
 package com.springstudy.springzj.pojo;
 
+import com.sun.istack.internal.NotNull;
+
 public class Person {
-    public Person(String name, String age) {
+    public Person(String name, String age, String high, String house, Boolean bl) {
         this.name = name;
         this.age = age;
+        this.high = high;
+        this.house = house;
+        this.bl = bl;
     }
 
     @Override
@@ -14,8 +19,15 @@ public class Person {
                 '}';
     }
 
+
+    @NotNull
     private String name;
+
     private String age;
+    private String high;
+    private String house;
+
+    private Boolean bl;
 
     public String getName() {
         return name;

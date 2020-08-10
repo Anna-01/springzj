@@ -23,19 +23,18 @@ public class LogAspects {
 
     @Before("pointCut()")
     public void logBegin() {
-        System.out.println("除法日志开始之前 begin");
+        System.out.println("前置通知 begin");
     }
     //日志结束
     @After("pointCut()")
     public  void logEnd() {
-        System.out.println("除法日志开始之后 after");
+        System.out.println("后置通知 after");
     }
 
     //返回通知
-    @AfterReturning(value = "pointCut()",returning = "result")//2.告诉spring容器result接收返回值
-    //joinPoint 切入点 方法名 ，而且一定出现在参数表的第一位
-    public void returnNotice(JoinPoint joinPoint ,Object result) {//1.result参数是来接受返回值
-        System.out.println("除法日志 after returning" + result );
+    @AfterReturning(value = "pointCut()",returning = "result")//2.告诉spring容器result接收返回值//joinPoint 切入点 方法名 ，而且一定出现在参数表的第一位
+    public void returnNotice(JoinPoint joinPoint ,Object result) {//1.result参数是来接受返回值 返回值时除法的运算结果
+        System.out.println("除法日志  返回通知 after returning" + result );
         //System.out.println("除法日志返回" + joinPoint );
 
     }
@@ -46,10 +45,11 @@ public class LogAspects {
     }
 
     //环绕通知
+//
     @Around("pointCut()")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
+    public void logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         //获取方法参数值数组
-        Object[] args = joinPoint.getArgs();
+       /* Object[] args = joinPoint.getArgs();
         Object result  = null;
         //得到其方法签名
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
@@ -67,9 +67,10 @@ public class LogAspects {
         System.out.println("环绕通知2" + "响应结果为" +result);
 
 
-
-        return result;
-
+*/
+        System.out.println("环绕通知1--");
+        Object obj = joinPoint.proceed();
+        System.out.println("环通知2-==");
+       // return obj;
     }
-
 }

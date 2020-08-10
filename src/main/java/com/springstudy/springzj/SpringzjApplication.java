@@ -11,7 +11,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 //@SpringBootApplication注解中含有@ComponentScan   springboot 核心 约定大于配置
@@ -22,14 +25,20 @@ import org.springframework.stereotype.Controller;
 //在 Spring Boot启动类上使用@ServletComponentScan 注解后，使用@WebServlet、@WebFilter、@WebListener标记的 Servlet、Filter、Listener 就可以自动注册到Servlet容器中，无需其他代码
 //sping需要在xml中配置
 @ServletComponentScan
+//启动注解事务管理
+@EnableTransactionManagement
+//开启异步注解
+@EnableAsync
+//开启定时任务
+@EnableScheduling
 public class SpringzjApplication {
 
     public static void main(String[] args) {
        // 配置文件上下文
         ConfigurableApplicationContext ctx = SpringApplication.run(SpringzjApplication.class, args);
         //从容器中获取类
-        Person person = ctx.getBean(Person.class);
-        System.out.println(person);
+        //Person person = ctx.getBean(Person.class);
+       // System.out.println(person);
         String [] buff = ctx.getBeanNamesForType(Person.class);
 
         for (int i=0; i < buff.length; i++) {
@@ -46,11 +55,9 @@ public class SpringzjApplication {
         AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(MyAopConfig.class);
 
         //从容器中获取对象
-        MathJiSuan mathJiSuan = context.getBean(MathJiSuan.class);
-        mathJiSuan.div(1,1);
+       // MathJiSuan mathJiSuan = context.getBean(MathJiSuan.class);
+      //  mathJiSuan.div(1,1);
         //为什么我的电脑这么卡
-
-
 
         //todo 1事务 2定时任务
 

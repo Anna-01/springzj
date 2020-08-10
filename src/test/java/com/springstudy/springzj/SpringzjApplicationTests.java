@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.web.reactive.HttpHandlerAutoConfig
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
@@ -17,6 +18,10 @@ class SpringzjApplicationTests {
 
     @Resource
     private MyService myService;
+
+    @Resource
+    private MathJiSuan mathJiSuan;
+
 
     @Test
     void contextLoads() {
@@ -43,9 +48,11 @@ class SpringzjApplicationTests {
     public void testAop() {
         //todo 切面
         AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(MyAopConfig.class);
-
         //从容器中获取对象
-        MathJiSuan mathJiSuan = context.getBean(MathJiSuan.class);
+       // MathJiSuan mathJiSuan = context.getBean(MathJiSuan.class);
+        //mathJiSuan.div(10,2);
         mathJiSuan.div(1,1);
     }
+
+
 }

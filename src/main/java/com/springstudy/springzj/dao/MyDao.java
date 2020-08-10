@@ -7,4 +7,6 @@ public interface MyDao {
     public void add();
 
     public void cheng();
+
+    void swAdd();
 }
