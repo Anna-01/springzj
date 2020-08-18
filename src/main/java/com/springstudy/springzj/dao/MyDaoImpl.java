@@ -38,6 +38,21 @@ public class MyDaoImpl implements MyDao{
        // UPDATE 'user' SET age = "1" WHERE id = 1
         String username = UUID.randomUUID().toString().substring(0, 5);
         jdbcTemplate.update(sql, 1,1);
+    }
+
+    /**
+     * 查询用户信息
+     * @param user
+     * @param password
+     */
+    @Override
+    public void getUserInfo(String user, String password) {
+        String sql = "select  *  from  `user` where username = ? and password = ?";
+        jdbcTemplate.execute(sql);
+        //PreparedStatement preparedStatement =
+        //jdbcTemplate.query(sql, new  );
 
     }
+
+
 }

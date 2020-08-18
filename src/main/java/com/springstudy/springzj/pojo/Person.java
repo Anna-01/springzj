@@ -4,6 +4,8 @@ import com.sun.istack.internal.NotNull;
 
 public class Person {
     public Person(String name, String age, String high, String house, Boolean bl) {
+
+        System.out.println("Person有参构造方法执行");
         this.name = name;
         this.age = age;
         this.high = high;
