@@ -2,6 +2,7 @@ package com.springstudy.springzj.config;
 
 import com.springstudy.springzj.aop.LogAspects;
 import com.springstudy.springzj.aop.MathJiSuan;
+import com.springstudy.springzj.qxlj.aop.LoginAop;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -29,6 +30,10 @@ public class MyAopConfig {
     @Bean
     public LogAspects logAspects() {
         return new LogAspects();
+    }
+    @Bean
+    public LoginAop loginAop() {
+        return new LoginAop();
     }
 
 

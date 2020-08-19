@@ -1,11 +1,15 @@
 package com.springstudy.springzj.pojo;
 
-import com.sun.istack.internal.NotNull;
 
-public class Person {
+import org.springframework.beans.factory.InitializingBean;
+
+/**
+ * @author My
+ */
+public class Person  implements InitializingBean {
     public Person(String name, String age, String high, String house, Boolean bl) {
 
-        System.out.println("Person有参构造方法执行");
+        System.out.println("Person的参构造方法执行");
         this.name = name;
         this.age = age;
         this.high = high;
@@ -22,7 +26,7 @@ public class Person {
     }
 
 
-    @NotNull
+
     private String name;
 
     private String age;
@@ -45,5 +49,10 @@ public class Person {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+
     }
 }

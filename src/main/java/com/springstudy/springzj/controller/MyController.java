@@ -1,7 +1,7 @@
 package com.springstudy.springzj.controller;
 
 import com.springstudy.springzj.pojo.Person;
-import com.sun.org.glassfish.gmbal.ParameterNames;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;

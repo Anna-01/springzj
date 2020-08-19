@@ -15,7 +15,7 @@ public class FilterConfig {
     @Bean
     public FilterRegistrationBean registRoleFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new RoleFilter());
-        filterRegistrationBean.addUrlPatterns("/*");
+        filterRegistrationBean.addUrlPatterns("/login");
         return filterRegistrationBean;
     }
 }

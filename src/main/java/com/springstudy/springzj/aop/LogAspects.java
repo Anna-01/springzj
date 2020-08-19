@@ -1,11 +1,8 @@
 package com.springstudy.springzj.aop;
 
-import javafx.beans.binding.ObjectExpression;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.aspectj.lang.reflect.MethodSignature;
-import org.omg.CORBA.OBJ_ADAPTER;
 
 //表示当前类是一个切面
 @Aspect

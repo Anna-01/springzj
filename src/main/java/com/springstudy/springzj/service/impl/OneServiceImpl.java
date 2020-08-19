@@ -19,10 +19,10 @@ public class OneServiceImpl implements OneService {
     @Override
     public User getUserInfo(String username) {
         User user = new User();
-        if ("lijiaxing".equals(username)) {
+        if ("1".equals(username)) {
             user.setRole("管理员");
         }
-        if ("lihua".equals(username)) {
+        if ("2".equals(username)) {
             user.setRole("客服");
         }
         return user;

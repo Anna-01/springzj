@@ -15,9 +15,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyConfig {
     //向容器中注册一个bean id默认为当前方法的名称
-    // 更改value值
+
     @Bean
+    // @Scope(value="prototype")
     public Person person() {
         return  new Person("lijiaixng", "20", "2" , "house", true);
     }
+    // 更改value值
 }
